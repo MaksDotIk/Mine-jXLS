@@ -6,4 +6,4 @@ RUN wget https://piston-data.mojang.com/v1/objects/450698d1863ab5180c25d7c804ef0
 RUN mkdir /data
 WORKDIR /data
 RUN echo eula=true > eula.txt
-CMD java -Xmx4G -Xms4G -jar /server/server.jar nogui
+CMD java -Xmx${XMX:-4G} -Xms${XMX:-4G} -jar /server/server.jar nogui
